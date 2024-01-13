@@ -22,3 +22,27 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+theme switcher 
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.querySelector('body').classList.add('dark')
+    } else {
+      document.querySelector('body').classList.remove('dark')
+    }
+  }, [theme])
+  console.log(document.documentElement)
+
+  const handleTheme = () => {
+    setTheme(theme == 'light' ? 'dark' : 'light')
+  }
+
+
+    <div className='w-full h-screen grid place-items-center bg-slate-50 dark:bg-black'>
+      <button onClick={handleTheme} className='bg-white text-xl px-3 py-2'>
+        {' '}
+        Click{' '}
+      </button>
+    </div>
