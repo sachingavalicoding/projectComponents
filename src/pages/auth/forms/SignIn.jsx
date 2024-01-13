@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useAuth } from '../../../context/AuthContext'
+import Heading from '../../../components/ui/Heading'
+import { Link } from 'react-router-dom'
 
 const SignIn = () => {
   const { signIn } = useAuth()
@@ -10,33 +12,42 @@ const SignIn = () => {
     signIn(email, password)
   }
   return (
-    <div className='w-[30rem] h[25rem] mx-auto mt-[10rem] border-2 flex items-center justify-center gap-4 flex-col'>
-      <h2> Sign in </h2>
-      <div>
-        <label> Email </label>
-        <input
-          className='border-2 w-full'
-          type='email'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label> Password </label>
-        <input
-          className='border-2 w-full'
-          type='password'
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
+    <div className='w-[300px] h[475px] p-[15px] bg-[#161616]  flex items-center justify-start flex-col  outline-1-[#2b9962] py-4'>
+      <Heading color={'text-[#00FF7F]'} text={'Online ClassRoom'} />
+      <div className='my-12'>
+        <div className='px-1 py-2 '>
+          <input
+            type='email'
+            value={email}
+            placeholder='Email'
+            onChange={e => setEmail(e.target.value)}
+          />
+        </div>
+        <div className='px-1 py-2 border-gray-100'>
+          <input
+            className=' shadow-sm'
+            type='password'
+            value={password}
+            placeholder='Password'
+            onChange={e => setPassword(e.target.value)}
+          />
+        </div>
       </div>
       <button
-        className='border-2 text-blue-500 px-6 py-1 text-xl font-bold  bg-slate-950'
+        className='px-9 py-1  bg-transparent font-normal border-2 text-xl rounded-lg text-gray-50  '
         onClick={handleSignIn}
       >
         {' '}
-        Sign In{' '}
+        Login{' '}
       </button>
+      ;
+      <p className='px-4 py-2 mt-2 text-slate-400'>
+        Create an new account{' '}
+        <Link className='text-[#00FF7F]' to={'/sign-up'}>
+          {' '}
+          Sign-Up{' '}
+        </Link>
+      </p>
     </div>
   )
 }

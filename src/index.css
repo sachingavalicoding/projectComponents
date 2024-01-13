@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  input {
+    @apply px-2 py-2 w-full text-slate-100 bg-transparent;
+  }
+}

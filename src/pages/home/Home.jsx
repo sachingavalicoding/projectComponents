@@ -1,3 +1,5 @@
+import SmNav from '../../components/navbar/SmNav'
+
 const Home = () => {
   //   const [theme, setTheme] = useState('dark')
 
@@ -15,7 +17,9 @@ const Home = () => {
   //   }
 
   return (
-    <div className='w-full h-screen grid place-items-center bg-slate-50 dark:bg-black'></div>
+    <div className='w-full min-h-screen bg-slate-50 dark:bg-black'>
+      <SmNav />
+    </div>
   )
 }
 
