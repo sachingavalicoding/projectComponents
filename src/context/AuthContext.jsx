@@ -9,7 +9,6 @@ const client = new Client()
   .setProject('65a05a15e5700eeb68d5')
 
 const account = new Account(client)
-
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)

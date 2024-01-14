@@ -12,7 +12,7 @@ const Profile = () => {
           <p> Name {user.email} </p>
         </div>
       ) : (
-        <p> user not fouuntd baby girl </p>
+        <p> user not Found baby girl </p>
       )}
     </div>
   )
